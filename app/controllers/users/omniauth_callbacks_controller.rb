@@ -21,6 +21,9 @@ module Users
     end
 
     def after_sign_in_path_for(resource_or_scope)
+      # user = User.from_provider(from_provider_params)
+      # binding.pry
+      # UserMailer.with(user: user).welcome.deliver_now
       stored_location_for(resource_or_scope) || root_path
     end
 
@@ -41,7 +44,7 @@ module Users
     end
 
     def check_user_present(type)
-      user = User.from_provide(from_provider_params)
+      user = User.from_provider(from_provider_params)
       if user.present?
         sign_out_all_scopes
         access_token = JsonWebToken.encode({uid: user.uid})

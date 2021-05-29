@@ -17,6 +17,7 @@ gem "paranoia", "~> 2.2"
 gem "jwt"
 gem 'rack-test', '>= 0.6.3'
 gem 'rails', '~> 6.1.3', '>= 6.1.3.2'
+gem 'sidekiq', '~> 6.1.3'
 
 # Use mysql as the database for Active Record
 gem 'mysql2', '~> 0.5'

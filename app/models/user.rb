@@ -12,7 +12,7 @@ class User < ApplicationRecord
   has_many :accounts, dependent: :destroy
   has_many :transactions, through: :accounts
 
-  def self.from_provide(form)
+  def self.from_provider(form)
     # return nil if User.find_by(uid: form[:uid]).present?
     create_with(email: form[:email] ? form[:email] : "",
                 full_name: form[:full_name],
