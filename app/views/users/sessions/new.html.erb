@@ -1,2 +1,8 @@
 <h2>You're Logged out! Log in to the Admin Dashboard</h2>
-<%= link_to "Sign in with Google", user_google_oauth2_omniauth_authorize_path, method: :post %>
+
+<%- if devise_mapping.omniauthable? %>
+  <%- resource_class.omniauth_providers.each do |provider| %>
+    <%= link_to "Sign in with #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider), method: :post %><br />
+  <% end -%>
+<% end -%>
+

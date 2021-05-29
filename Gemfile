@@ -11,6 +11,10 @@ gem 'dotenv-rails'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-rails_csrf_protection'
+gem 'omniauth-facebook'
+gem 'omniauth-github'
+gem "paranoia", "~> 2.2"
+gem "jwt"
 gem 'rack-test', '>= 0.6.3'
 gem 'rails', '~> 6.1.3', '>= 6.1.3.2'
 
